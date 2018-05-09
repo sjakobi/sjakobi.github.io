@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Hi Haddock 1: Design changes and first steps"
+---
+
+It has already been three and a half weeks since I got the news that [my proposal for the Hi Haddock project][accepted-proposal] was accepted for GSoC 2018!
+
+The first days after these news were quite exciting as it turned out that several people were
+opposed to an important part of my proposal: Using `haddock-library` in GHC so the documentation
+could be be exported in its parsed AST form. The main argument was that GHC shouldn't be too
+tightly integrated with haddock and the haddock markup language.
+
+[Gershom Bazerman][gbaz] had made [a counter-proposal][lexer-proposal] around the idea
+of exporting the raw docstrings as they appear in the source, combined with enough information for
+external tools to rename and link identifiers in the docs. Figuring out for which identifiers to
+export this data would be the task of a new lexer that detects identifiers (and other things that resemble identifiers) in the docstrings
+
+After [some discussion][format-issue], my mentors [Alex][alex] and [Herbert][hvr] and I decided that I should
+build a prototype based on Gershom's idea. After some consideration, I came up with a rough [type design][type-design] for the prototype.
+
+Implementing this prototype including serialization to `.hi`-files will be my goal for the first
+coding period until mid-June.
+In case you'd like to see my first steps implementing the lexer, look [here][lexer-repo].
+
+[accepted-proposal]: https://docs.google.com/document/d/1YnUsOnAAn1t5dGaLBe7sW5DMqlKgM2kqCZ8Ydx_FqGc
+[format-issue]: https://github.com/haskell/haddock/issues/805
+[lexer-proposal]: https://github.com/haskell/haddock/pull/799#issuecomment-381341264
+[gbaz]: https://github.com/gbaz
+[alex]: https://github.com/alexbiehl
+[hvr]: https://github.com/hvr
+[type-design]: https://github.com/haskell/haddock/issues/805#issuecomment-387043243
+[lexer-repo]: https://github.com/sjakobi/hi-haddock-lexer
