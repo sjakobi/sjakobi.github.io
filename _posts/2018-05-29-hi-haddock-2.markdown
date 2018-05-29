@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Hi Haddock 2: The Lexer prototype is ready for review"
+---
+
+Progress has been better than expected in the past two weeks, so I've just
+submitted my Lexer prototype including serialization for review on [Phabricator][phab].
+
+Some of this work has been great fun. Changing the documentation types and then
+following the type errors for hours was straight up addicting.
+
+I was also amazed when I copied the code for extracting docstrings from declarations
+from haddock and was mostly done after fixing a few type errors. Both my mentors and I
+had expected this to be way more work than it turned out to be.
+
+Planned next is a prototype of the `:doc` command in GHCi.
+
+[phab]: https://phabricator.haskell.org/D4749
