@@ -6,7 +6,7 @@ title:  "Hi Haddock 3: Google Summer of Code is over"
 While the Google Summer of Code ends today, my work on [Hi Haddock][project-description] hasn't finished yet.
 
 Initially I had some pretty good progress:
-An preview version of the `GHCi` `:doc` command [even made it into GHC-8.6][doc-phab].
+A preview version of the `GHCi` `:doc` command [even made it into GHC-8.6][doc-phab].
 Closing [this 10 years old GHC ticket][old-ticket] felt great!
 Matthías Páll Gissurarson even made use of the serialized docstrings in [a nice feature][hole-docs] for working with typed holes!
 
