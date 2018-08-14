@@ -3,7 +3,7 @@ layout: post
 title:  "Hi Haddock 3: Google Summer of Code is over"
 ---
 
-While the Google Summer of Code ends today, my work on [Hi Haddock][project-description] hasn't been finished yet.
+While the Google Summer of Code ends today, my work on [Hi Haddock][project-description] hasn't finished yet.
 
 Initially I had some pretty good progress:
 An preview version of the `GHCi` `:doc` command [even made it into GHC-8.6][doc-phab].
@@ -15,7 +15,7 @@ This turned out to be a good decision: we discovered that in addition to the doc
 fields that we originally expected to serialize, Haddock requires quite a bunch of [further
 data][Docs].
 
-Not unexpectedly changing haddock's internals turned out to be rather tricky.
+Not unexpectedly, changing haddock's internals turned out to be rather tricky.
 While my fork of haddock can already generate [reasonably-looking docs for `lens`][lens-docs],
 fancy GHC features like associated data families currently [make it panic][issue25].
 
