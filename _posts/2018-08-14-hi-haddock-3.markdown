@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Hi Haddock 3: Google Summer of Code is over"
+---
+
+While the Google Summer of Code ends today, my work on [Hi Haddock][project-description] hasn't been finished yet.
+
+Initially I had some pretty good progress:
+An preview version of the `GHCi` `:doc` command [even made it into GHC-8.6][doc-phab].
+Closing [this 10 years old GHC ticket][old-ticket] felt great!
+Matthías Páll Gissurarson even made use of the serialized docstrings in [a nice feature][hole-docs] for working with typed holes!
+
+Emboldened by this progress, my mentors Alex and Herbert and I decided to abandon the [original plan][proposal] and instead start work on Haddock proper.
+This turned out to be a good decision: we discovered that in addition to the doc-map and arg-map
+fields that we originally expected to serialize, Haddock requires quite a bunch of [further
+data][Docs].
+
+Not unexpectedly changing haddock's internals turned out to be rather tricky.
+While my fork of haddock can already generate [reasonably-looking docs for `lens`][lens-docs],
+fancy GHC features like associated data families currently [make it panic][issue25].
+
+Several other issues that need to be resolved are listed on [my patch for GHC][hi-haddock-phab] and my [PR for haddock][hi-haddock-pr].
+I hope to fix these issues in the upcoming weeks.
+
+I'm very thankful to my mentors Alex and Herbert for their guidance and patience!
+Also many thanks to great folks on the `#ghc` IRC channel who always responded to my questions even when I wasn't quite sure what I was asking myself!
+
+
+[project-description]: https://summerofcode.withgoogle.com/projects/#4975710121230336
+[doc-phab]: https://phabricator.haskell.org/D4758
+[proposal]: https://docs.google.com/document/d/1YnUsOnAAn1t5dGaLBe7sW5DMqlKgM2kqCZ8Ydx_FqGc
+[Docs]: https://github.com/sjakobi/ghc/blob/f6e772cd445d98bdd847ead784ea2b96160495b5/compiler/hsSyn/HsDoc.hs#L327-L349
+[hi-haddock-phab]: https://phabricator.haskell.org/D5067
+[hi-haddock-pr]: https://github.com/haskell/haddock/pull/906
+[lens-docs]: https://github.com/haskell/haddock/files/2286675/lens-4.17-docs.tar.gz
+[issue25]: https://github.com/sjakobi/haddock/issues/25
+[hole-docs]: https://phabricator.haskell.org/D4848
+[old-ticket]: https://ghc.haskell.org/trac/ghc/ticket/2168
